@@ -1,10 +1,14 @@
 const express = require("express"); 
 const pgPromise = require("pg-promise"); 
+const cors = require("cors")
  
 const app = express(); 
 const pgp = pgPromise(); 
+
+// Allow any origin
+app.use(cors())
  
-const dbConfig = { 
+const dbConfig = {   
   connectionString: 
     "postgres://xlralosa:8RteJwNO8GNe1dSV_K7YwJCjgIU-QGjW@dumbo.db.elephantsql.com/xlralosa", 
   ssl: { 
